@@ -1,0 +1,12 @@
+<h1>My tasks!</h1>
+<form action="">
+<% @tasks.each do |task| %>
+  <% if task.completed %>
+  <input type="checkbox" checked > <%= task.title %> <br>
+  <% else %>
+  <input type="checkbox" > <%= task.title %> <br>
+  <% #We pass restaurant as an argument because we can extract its id. %>
+  <% end %>
+  <%= link_to "Details of task", task_path(task) %> <br>
+<% end %>
+</form>
